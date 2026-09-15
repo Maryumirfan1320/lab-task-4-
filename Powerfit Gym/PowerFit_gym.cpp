@@ -1,8 +1,10 @@
+// Online C compiler to run C program online
 #include<stdio.h>
 int main(void)
 {
     int choice;
     int bill = 0;
+    int planrate=0;
 
     printf("======================");
     printf("**WELCOME TO POWERFIT GYM**");
@@ -79,14 +81,17 @@ int main(void)
                 {
                     case 1:
                         printf("You selected Basic Plan.\n");
+                        planrate=planrate+500;
                         break;
 
                     case 2:
                         printf("You selected Premium Plan.\n");
+                        planrate=planrate+1000;
                         break;
 
                     case 3:
                         printf("You selected VIP Plan.\n");
+                        planrate=planrate+3000;
                         break;
 
                     default:
@@ -254,7 +259,7 @@ int main(void)
             int choice;
             int months;
             int Date;
-            float bill;
+            float bill=0;
             float tax;
             float discount = 0;
             float penalty = 0;
@@ -273,9 +278,9 @@ int main(void)
                 printf("\nHow many months have you been enrolled? ");
                 scanf("%d", &months);
 
-                bill = months * 10000;
+                bill = 1 * 10000;
                 tax = bill * 0.10;
-                bill = bill + tax;
+                bill = bill + tax + planrate;
 
                 printf("\nMonthly Bill = Rs. %.2f\n", bill);
                 printf("Tax = Rs. %.2f\n", tax);
